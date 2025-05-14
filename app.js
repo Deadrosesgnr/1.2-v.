@@ -43,11 +43,16 @@ const ruta = [
 const bomberoMarker = L.marker(ruta[0]).addTo(map);
 bomberoMarker.bindPopup('Carro de Bomberos').openPopup();
 
-let index = 0;
+window.onload = () => {
+  alert("🚨 Aviso de emergencia: Accidente en Sargento Menadier con Nueve de Agosto reportado. El carro de bomberos ha sido despachado.");
+ //Alerta
+  
+  let index = 0;
 
-setInterval(() => {
-  index = (index + 1) % ruta.length;
-  const newPos = ruta[index];
-  bomberoMarker.setLatLng(newPos);
-  map.panTo(newPos);
-}, 3000); // Movimiento cada 3 segundos
+  setInterval(() => {
+   index = (index + 1) % ruta.length;
+    const newPos = ruta[index];
+    bomberoMarker.setLatLng(newPos);
+   map.panTo(newPos);
+    }, 3000);
+};// Movimiento cada 3 segundos
